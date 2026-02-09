@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+anyhow = "1.0.101"
 argh = "0.1.14"
 modbus-rtu = "1.3.0"
 serialport = "4.8.1"
