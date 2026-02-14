@@ -1,0 +1,203 @@
+[Read]No: P0504 Addr: 0x0504 Value: 9000 Jog speed setpoint
+
+Send:01 03 05 04 00 01 c5 07
+
+Recv:01 03 05 04 02 23 28 7e 2d
+
+[Read]No: P2138 Addr: 0x1526 Value: 0 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 00 ac b8
+
+[Read]No: P1841 Addr: 0x1229 Value: 0 Error code
+
+Send:01 03 12 29 00 01 50 ba
+
+Recv:01 03 12 29 02 00 00 1a 6c
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 06 15 26 00 01 ad cd
+
+Recv:01 06 15 26 00 01 ad cd
+
+[Read]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 01 6d 78
+
+[Read]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 01 6d 78
+
+[Read]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 01 6d 78
+
+[Read]No: P1841 Addr: 0x1229 Value: 0 Error code
+
+Send:01 03 12 29 00 01 50 ba
+
+Recv:01 03 12 29 02 00 00 1a 6c
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P0504 Addr: 0x0504 Value: 9000 Jog speed setpoint
+
+Send:01 06 05 04 23 28 d1 e9
+
+Recv:01 06 05 04 23 28 d1 e9
+
+[Read]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 01 6d 78
+
+[Read]No: P1841 Addr: 0x1229 Value: 0 Error code
+
+Send:01 03 12 29 00 01 50 ba
+
+Recv:01 03 12 29 02 00 00 1a 6c
+
+[Write]No: P0504 Addr: 0x0504 Value: 1000 Jog speed setpoint
+
+Send:01 06 05 04 03 e8 c8 79
+
+Recv:01 06 05 04 03 e8 c8 79
+
+[Read]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 01 6d 78
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Write]No: P2139 Addr: 0x1527 Value: 1 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 01 fc 0d
+
+Recv:01 06 15 27 00 01 fc 0d
+
+[Write]No: P2139 Addr: 0x1527 Value: 0 Í¨Ñ¶Õý×ªµã¶¯
+
+Send:01 06 15 27 00 00 3d cd
+
+Recv:01 06 15 27 00 00 3d cd
+
+[Read]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 01 6d 78
+
+[Read]No: P2138 Addr: 0x1526 Value: 1 Í¨Ñ¶µã¶¯Ê¹ÄÜ
+
+Send:01 03 15 26 00 01 61 cd
+
+Recv:01 03 15 26 02 00 01 6d 78
