@@ -1,6 +1,9 @@
 use argh::FromArgs;
 use anyhow::{Result};
 use std::result::Result::Ok;
+use std::sync::OnceLock;
+
+static ARGS: OnceLock<AppArgs> = OnceLock::new();
 
 use std::fs::File;
 use std::io::{self, BufRead};
@@ -8,7 +11,7 @@ use std::path::Path;
 
 use modbus_rtu::{Function, Master, Request};
 
-#[derive(FromArgs)]
+#[derive(FromArgs, Debug)]
 /// Servo driver (uses MODBUS-RTU)
 struct AppArgs {
     /// whether to be verbose
@@ -16,10 +19,10 @@ struct AppArgs {
     verbose: bool,
 
     #[argh(subcommand)]
-    nested: MySubCommandEnum,
+    subcommand: MySubCommandEnum,
 }
 
-#[derive(FromArgs)]
+#[derive(FromArgs, Debug)]
 #[argh(subcommand)]
 enum MySubCommandEnum {
     Parse(PrettyPrintCommand),
@@ -27,7 +30,7 @@ enum MySubCommandEnum {
     Connect(ConnectCommand)
 }
 
-#[derive(FromArgs)]
+#[derive(FromArgs, Debug)]
 /// Pretty print log file as decoded MODBUS messages.
 #[argh(subcommand, name = "parse")]
 struct PrettyPrintCommand {
@@ -36,27 +39,36 @@ struct PrettyPrintCommand {
     logfile: String, 
 }
 
-#[derive(FromArgs)]
+#[derive(FromArgs, Debug)]
 /// Scan for available ports and exit.
 #[argh(subcommand, name = "scan")]
 struct ScanCommand {
 }
 
-#[derive(FromArgs)]
+#[derive(FromArgs, Debug)]
 /// Open a port and send modbus messages to it
 #[argh(subcommand, name = "connect")]
 struct ConnectCommand {
-        /// port to connect to
+    /// port to connect to
     #[argh(option, short = 'p')]
     port: String,
+
+    /// baud rate, the default is 115200, but some devices may require a different baud rate.
+     #[argh(option, short = 'b', default = "115200")]   
+    baud: u32,
+}
+
+fn get_args() -> &'static AppArgs {
+    ARGS.get().expect("Application arguments not set")
 }
 
 fn main() -> Result<()> {
     let args: AppArgs = argh::from_env();
+   let verbose = args.verbose;
 
-    let verbose = args.verbose;
-
-    match &args.nested {
+    ARGS.set(args).unwrap();
+ 
+    match &get_args().subcommand {
         MySubCommandEnum::Parse(cmd) => {
             if verbose {
                 println!("Parse mode enabled, parsing log file: {}", cmd.logfile);
@@ -95,13 +107,17 @@ fn main() -> Result<()> {
         }
         MySubCommandEnum::Connect(cmd) => {
             if verbose {
-                println!("Using port: {}", cmd.port);
+                println!("Using port: {} and baud rate: {}", cmd.port, cmd.baud);
             }
 
-            let mut master = Master::new_rs485(&cmd.port, 19_200)?;
+            let mut master = Master::new_rs485(&cmd.port, cmd.baud)?;
 
             let func = Function::ReadHoldingRegisters { starting_address: 0x0000, quantity: 2 };
             let request = Request::new(0x01, &func, std::time::Duration::from_millis(200));
+
+            if verbose {
+                println!("Sending request: {request:?}");
+            }
 
             let response = master.send(&request)?;
             println!("response: {response:?}");
